@@ -7,10 +7,9 @@ import streamlit as st
 import dask.dataframe as dd
 
 # Read the CSV file with Dask
-#df = dd.read_csv(r'G:\GitHub\Kaggle Tokyo Stock Exchange\jpx-tokyo-stock-exchange-prediction\train_files\stock_prices.csv')
-#stock_list=dd.read_csv(r'G:\GitHub\Kaggle Tokyo Stock Exchange\jpx-tokyo-stock-exchange-prediction\stock_list.csv')
-df=dd.read_csv('https://drive.google.com/file/d/1S30EmxngjwmmRog3MM6uAFZglDcYaBLl/view?usp=sharing')
-stock_list=dd.read_csv('https://github.com/Tramnddle/Streamlit_App/blob/main/stock_list.csv')
+df = dd.read_csv(r'G:\GitHub\Kaggle Tokyo Stock Exchange\jpx-tokyo-stock-exchange-prediction\train_files\stock_prices.csv')
+stock_list=dd.read_csv(r'G:\GitHub\Kaggle Tokyo Stock Exchange\jpx-tokyo-stock-exchange-prediction\stock_list.csv')
+
 # Create a dropdown menu
 Securities_List = st.selectbox('Securities reference list: ', list(stock_list[['SecuritiesCode', 'Name']].itertuples(index=False, name=None)))
 
